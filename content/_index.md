@@ -11,6 +11,6 @@ menu:
         parent: ""
 ---
 
-# Home
+# {{< exis >}}
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ducimus earum accusantium asperiores vel odio voluptas ea ab, nesciunt rem dicta quasi neque ut cum, sequi soluta. Temporibus, et earum.
