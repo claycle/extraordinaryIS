@@ -1,3 +1,47 @@
 .text-red {
     color: $exis-red;
 }
+
+.text-body {
+    font-family: $font-family-sans-serif;
+}
+
+.text-heading {
+    font-family: $headings-font-family;
+}
+
+#coverimg {
+    background-color: $exis-red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: auto;
+    height: auto;
+}
+
+#overimgtxt, #besideimgtxt {
+    color: $white;
+    text-shadow: 1px 1px 2px $black;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-family: $headings-font-family;
+    font-size: rfs-fluid-value(3.5rem);
+}
+
+#besideimgtxt {
+    color: $black;
+    font-size: rfs-fluid-value(2rem);
+    text-shadow: none;
+    color: $exis-dark-red;
+}
+
+@include media-breakpoint-up(md) {
+    #coverimg {
+        width: 50vw;
+        height: 50vw;
+    }
+}

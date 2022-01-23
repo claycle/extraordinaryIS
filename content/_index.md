@@ -1,7 +1,7 @@
 ---
-draft: true
-title: "HOME"
-description: "Description of HOME"
+draft: false
+title: "ExtraordinaryIS"
+description: "A Movement by the Otis and Rosie Brown Foundation"
 date: 2022-01-22T12:31:40-06:00
 menu:
     main:
@@ -9,6 +9,9 @@ menu:
         name: "home"
         weight: 100 
         parent: ""
+
+overimage: <logo>
+besideimage: "A Movement by the Otis and Rosie Brown Foundation"
 ---
 
 # {{< exis >}}

@@ -2,7 +2,7 @@
 
     <div class="row footer-text">
       <div class="col-12 col-md text-center text-md-left nav-link text-white">
-          Copyright &copy; My Organisation - 2020 All rights reserved.
+          {{.Param "copyright" | markdownify}}
       </div>
     </div>
 
