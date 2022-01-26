@@ -1,3 +1,12 @@
+.text-serif {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.text-sans {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+
 .text-red {
     color: $exis-red;
 }
@@ -10,38 +19,59 @@
     font-family: $headings-font-family;
 }
 
-#coverimg {
-    background-color: $exis-red;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: auto;
-    height: auto;
+// Block Banners
+// Block Banners are 32x9 banners that either stack (sm) or side-by-side (md).
+// The cover banner is a special block banner.
+.block-banner-cover-row > .col {
+    width: 100%;
+    height: 28.125vw;
 }
 
-#overimgtxt, #besideimgtxt {
+.block-banner-left {
+    background-color: $black;
+}
+
+.block-banner-right {
+    background-color: $exis-red;
+}
+
+.block-banner-col {
+    background-image: url(https://picsum.photos/800/225);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     color: $white;
-    text-shadow: 1px 1px 2px $black;
+    font-family: $headings-font-family;
+    //font-size: rfs-fluid-value(4rem);
+    font-weight: 700;
+    font-size: 8vw;
+}
+
+.block-banner-inner {
+    //text-shadow: 1px 1px 2px $black;
     text-align: center;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-weight: 700;
-    font-family: $headings-font-family;
-    font-size: rfs-fluid-value(3.5rem);
 }
 
-#besideimgtxt {
-    color: $black;
-    font-size: rfs-fluid-value(2rem);
-    text-shadow: none;
-    color: $exis-dark-red;
+.block-banner-glyph {
+    position: relative;
+    width: 25%;
+    height: auto;
+    text-align: center;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    filter: drop-shadow(2px 2px 4px $black);
 }
 
 @include media-breakpoint-up(md) {
-    #coverimg {
+    .block-banner-cover-row > .col {
         width: 50vw;
-        height: 50vw;
+        height: 28.125vw;
+    }
+    .block-banner-col {
+        font-size: 5vw;
     }
 }

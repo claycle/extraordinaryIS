@@ -7,7 +7,7 @@ menu:
     main:
         identifier: "contact"
         name: "Contact"
-        weight: 100 
+        weight: 500 
         parent: ""
 ---
 

@@ -1,0 +1,39 @@
+/* For nav bar effects */
+.stucky {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 8px 4px rgba($black, 0.75);   
+    //border-bottom: 1px solid $nta-dark-brown;
+    //background-color: rgba($nta-dark-brown, 0.9);
+    transition: box-shadow 0.5s ease-out;
+}
+
+.unstucky {
+    box-shadow: none;
+    //border-bottom: none;
+    //background-color: rgba($nta-dark-brown, 1);
+    transition: box-shadow 0.5s ease-out;
+}
+
+.navbar-brand > img {
+    height: 3rem;
+    width: auto;
+    // filter: drop-shadow(none);
+    // transition: filter 0.5s;
+}
+
+.navbar-brand > img:hover {
+    // filter: drop-shadow(0px 0px 0.2rem rgba($white, 0.5));
+    // transition: filter 0.5s;
+}
+
+a.navbar-brand {
+    text-shadow: none;
+    filter: drop-shadow(none);
+    transition: filter 0.5s;
+}
+
+a.navbar-brand:hover {
+    text-shadow: none;
+    filter: drop-shadow(0px 0px 0.2rem rgba($white, 0.5));
+    transition: filter 0.5s;
+}
