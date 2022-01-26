@@ -9,7 +9,7 @@ enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = true
 
-#googleAnalytics = "UA-114931239-3"
+googleAnalytics = "UA-114931239-2"
 
 [module]
 [[module.mounts]]
