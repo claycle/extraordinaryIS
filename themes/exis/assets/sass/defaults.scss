@@ -1,26 +1,28 @@
-$font-family-sans-serif: 'Libre Franklin', serif, system-ui, -apple-system,  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
+$font-family-sans-serif: "Libre Franklin", serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 
 //$headings-font-family:  'Libre Franklin', sans-serif;
 $headings-font-family: $font-family-sans-serif;
-$headings-font-weight:        700;
+$headings-font-weight: 700;
 
 //$font-weight-normal: 300;
 
 // EXIS COLORS
-$exis-red: rgb(249, 56, 34);        // Pomegranate
-$exis-green: rgb(67, 176, 42);      // Apple
-$exis-blue: rgb(0, 156, 166);       // Bondi Blue
-$exis-orange: rgb(232, 119, 34);    // Tango
+$exis-red: rgb(249, 56, 34); // Pomegranate
+$exis-green: rgb(67, 176, 42); // Apple
+$exis-blue: rgb(0, 156, 166); // Bondi Blue
+$exis-orange: rgb(232, 119, 34); // Tango
 
 // 2022 palette colors
-$exis-seagreen: rgb(61, 110, 113);  // William
-$exis-yellow: rgb(253, 185, 3);     // Selective Yellow
-$exis-saltbox: rgb(104, 83, 105);   // Salt Box
-$exis-reef: rgb(201, 255, 185);     // Reef
+$exis-seagreen: rgb(61, 110, 113); // William
+$exis-yellow: rgb(253, 185, 3); // Selective Yellow
+$exis-saltbox: rgb(104, 83, 105); // Salt Box
+$exis-reef: rgb(201, 255, 185); // Reef
 
-$exis-steel-gray: rgb(32, 32, 48);  // Steel Gray
-$exis-black: rgb(12, 15, 10);       // Marshland
+$exis-steel-gray: rgb(32, 32, 48); // Steel Gray
+$exis-black: rgb(12, 15, 10); // Marshland
 
 // Dark/Light Versions
 $exis-darken-amount: 30;
@@ -42,8 +44,6 @@ $exis-light-orange: lighten($exis-orange, $exis-darken-amount);
 // $warning:       $exis-light-orange;
 // $danger:        $exis-light-red;
 // //$light:         $gray-100 !default;
-$dark:          $exis-steel-gray;
+$dark: $exis-steel-gray;
 
 $black: $exis-black;
-
-

@@ -1,11 +1,10 @@
 .text-serif {
-    font-family: 'Libre Baskerville', serif;
+    font-family: "Libre Baskerville", serif;
 }
 
 .text-sans {
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: "Libre Franklin", sans-serif;
 }
-
 
 .text-red {
     color: $exis-red;
@@ -71,6 +70,7 @@
         width: 50vw;
         height: 28.125vw;
     }
+
     .block-banner-col {
         font-size: 5vw;
     }
