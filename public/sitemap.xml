@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://extraordinaryis.org/</loc>
+    <loc>https://dev.extraordinaryis.org/</loc>
     <lastmod>2022-01-25T18:43:22-06:00</lastmod>
   </url><url>
-    <loc>https://extraordinaryis.org/categories/</loc>
+    <loc>https://dev.extraordinaryis.org/categories/</loc>
   </url><url>
-    <loc>https://extraordinaryis.org/tags/</loc>
+    <loc>https://dev.extraordinaryis.org/tags/</loc>
   </url>
 </urlset>
