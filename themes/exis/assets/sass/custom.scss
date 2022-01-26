@@ -23,7 +23,15 @@
 // The cover banner is a special block banner.
 .block-banner-cover-row > .col {
     width: 100%;
-    height: 28.125vw;
+    height: 42.85714286vh;
+}
+
+// #cover .block-banner-cover-row .col {
+//     height: 50vh;
+// }
+
+.hero .block-banner-cover-row .col  {
+    height: 50vh;
 }
 
 .block-banner-left {
@@ -35,7 +43,7 @@
 }
 
 .block-banner-col {
-    background-image: url(https://picsum.photos/800/225);
+    //background-image: url(https://picsum.photos/800/225);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -44,6 +52,10 @@
     //font-size: rfs-fluid-value(4rem);
     font-weight: 700;
     font-size: 8vw;
+}
+
+.block-banner-subtext {
+    font-size: 2vw;
 }
 
 .block-banner-inner {
@@ -56,22 +68,33 @@
 }
 
 .block-banner-glyph {
-    position: relative;
-    width: 25%;
+    display: block;
+    margin: 0px auto;
+    width: 15%;
     height: auto;
     text-align: center;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
     filter: drop-shadow(2px 2px 4px $black);
 }
 
 @include media-breakpoint-up(md) {
     .block-banner-cover-row > .col {
         width: 50vw;
-        height: 28.125vw;
+        height: 42.85714286vh;
+    }
+
+    // #cover .block-banner-cover-row .col {
+    //     height: 100vh;
+    // }
+
+    .hero .block-banner-cover-row .col {
+        height: 100vh;
     }
 
     .block-banner-col {
         font-size: 5vw;
+    }
+
+    .block-banner-glyph {
+        width: 30%;
     }
 }

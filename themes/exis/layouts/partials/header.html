@@ -2,17 +2,19 @@
     {{ if not .Params.nocover }}
         <style>
             {{ with .Params.cover.left }}
-                .block-banner-left {
+                #cover .block-banner-left {
                     {{ with .image }}
                         {{ if eq . "none" }}
                         background-image: none;
                         {{ else }}
-                        background-image: url({{ . }});
+                        {{ with $.Resources.GetMatch . }}
+                        background-image: url({{ .RelPermalink }});
+                        {{ end }}
                         {{ end }}
                     {{ end }}
-                    {{ with .backgroundcolor }}
-                    background-color: {{ . }};
-                    {{ end }}
+                        {{ with .backgroundcolor }}
+                            background-color: {{ . }};
+                        {{ end }}
                     {{ with .color }}
                     color: {{ . }};
                     {{ end }}
@@ -25,12 +27,14 @@
                 }
             {{ end }}
             {{ with  .Params.cover.right }}
-                .block-banner-right {
+                #cover .block-banner-right {
                     {{ with .image }}
                         {{ if eq . "none" }}
                         background-image: none;
                         {{ else }}
-                        background-image: url({{ . }});
+                            {{ with $.Resources.GetMatch . }}
+                                background-image: url({{ .RelPermalink }});
+                            {{ end }}
                         {{ end }}
                     {{ end }}
                     {{ with .backgroundcolor }}
@@ -48,33 +52,51 @@
                 }
             {{ end }}
         </style>
-
-        <div class="container-fluid g-0 block-banner">
+        <div id="cover" class="container-fluid g-0 block-banner {{ if .Params.cover.hero }}hero{{ end }}">
             <div class="row row-cols-1 row-cols-md-2 block-banner-cover-row">
                 <div class="col g-0 block-banner-left block-banner-col text-center p-4">
                     <div class="block-banner-inner">
+                        {{ with .Params.cover.left.glyph | string | .Resources.GetMatch }}
+                            <div class="block-banner-glyph">
+                                <img class="img-fluid" src="{{ .RelPermalink }}">
+                            </div>
+                        {{ end }}
                         {{ with .Params.cover.left.text }}
-                            {{ if eq . "logo" }}
-                            <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
-                            {{ else }}
-                            {{ . | markdownify }}
-                            {{ end}}
+                            <div class="d-inline d-md-block">
+                                {{ if eq . "logo" }}
+                                    <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
+                                {{ else }}
+                                    {{ . | markdownify }}
+                                {{ end}}
+                                {{ with $.Params.cover.left.subtext }}
+                                    <div class="block-banner-subtext text-center">
+                                        {{ . }}
+                                    </div>
+                                {{ end }}
+                            </div>
                         {{ end }}
                     </div>
                 </div>
                 <div class="col g-0 block-banner-right block-banner-col text-center p-4">
                     <div class="block-banner-inner">
-                        {{ with .Resources.GetMatch "right.{svg,jpg,png}" }}
-                            <div class="block-banner-glyph">
-                                <img class="img-fluid" src="{{ . }}">
+                        {{ with .Params.cover.right.glyph | string | .Resources.GetMatch }}
+                            <div class="block-banner-glyph d-inline-block d-md-block">
+                                <img class="img-fluid" src="{{ .RelPermalink }}">
                             </div>
                         {{ end }}
                         {{ with .Params.cover.right.text }}
-                            {{ if eq . "logo" }}
-                            ExtraordinaryIS
-                            {{ else }}
-                            {{ . | markdownify }}
-                            {{ end}}
+                            <div class="d-inline d-md-block">
+                                {{ if eq . "logo" }}
+                                    <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
+                                {{ else }}
+                                    {{ . | markdownify }}
+                                {{ end}}
+                                {{ with $.Params.cover.right.subtext }}
+                                    <div class="block-banner-subtext text-center">
+                                        {{ . }}
+                                    </div>
+                                {{ end }}
+                            </div>
                         {{ end }}
                     </div>
                 </div>
