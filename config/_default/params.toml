@@ -1,13 +1,13 @@
 copyright = "Copyright &copy; 2022 The Otis and Rosie Brown Foundation, Inc. All Rights Reserved."
-logo = "/exis.svg"
-logo_small = "/exis.svg"
+logo = "/logo.svg"
+logo_small = "/logo.svg"
 cover = "https://picsum.photos/1000/1000"
 crafted_email_url = "mailto:05_cod_chimp@icloud.com"
 
 styletitle = "<b><span class='text-red'>Extra</span>ordinary<span class='text-red'>IS</span></b>"
 
 meta_description = "ExtraordinaryIS - A Movement by the Otis and Rosie Brown Foundation"
-meta_keywords = "extraordinaryis,foundation,otis and rosie brown,nonprofit,arlington,texas,scholarships,orbf,movement"
+meta_keywords = "extraordinaryis,foundation,otis and rosie brown,nonprofit,501(c)(3),arlington,texas,scholarships,orbf,movement"
 meta_twitter_card = "summary_large_image"
 meta_twitter_site = "@YExtraordinary"
 meta_twitter_creator = "@YExtraordinary"

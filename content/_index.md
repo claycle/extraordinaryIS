@@ -7,7 +7,7 @@ menu:
     main:
         identifier: "home"
         name: "Home"
-        weight: 100 
+        weight: 100
         parent: ""
 
 overimage: <logo>
@@ -27,6 +27,7 @@ cover:
         text: A Movement by the Otis and Rosie Brown Foundation
         size: 1.5rem
         glyph: glyph.svg
+shufflematch: "images/test/*.{webp,jpg,png}"
 ---
 # {{< exis >}}
 
