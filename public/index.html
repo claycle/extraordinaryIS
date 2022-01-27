@@ -5,18 +5,6 @@
 <head>
 	<meta name="generator" content="Hugo 0.91.2" />
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-114931239-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
     
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dev.extraordinaryis.org/cover.webp"/>
@@ -261,48 +249,108 @@ if (!doNotTrack) {
 </div>
 
 
+<style>
+
+ 
+
+    div.youtube-image {
+        position: relative;
+    }
+    div.youtube-play-button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    div.cover-image {
+        background-color: red;
+    }
+
+    div.youtube-play-button > img {    
+        
+        width: 50px;
+        height: auto;
+        opacity: 0.5;
+        transition: opacity 0.5s;
+    }
+    div.youtube-play-button > img:hover {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+    }
+    div.youtube-video {
+        display: none;
+    }
+    div.youtube-video > iframe {
+        display: none;
+    }
+</style>
+
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col">
+        <div class="col col-12 col-md-6">
             <h1 id="the-2021-b-classtext-redextrabbordinarybb-classtext-redisb-gala">The 2021 <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b> Gala</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum nulla et magna maximus, ac eleifend ante fringilla. Integer ornare vestibulum turpis vitae eleifend. Maecenas tempus sit amet velit eu ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl lacus, malesuada sed libero ac, pretium iaculis magna. Mauris sit amet erat vel mauris efficitur euismod vitae vel nisl. Pellentesque vulputate feugiat augue ut bibendum. Nam ullamcorper lorem lacus, eget pellentesque tellus ullamcorper et. Suspendisse luctus at purus at ultricies. Donec blandit quam vel aliquet suscipit. Cras sit amet dolor sed nisi elementum elementum eu sed felis. Donec dictum euismod ligula bibendum fermentum. Vivamus efficitur ullamcorper tincidunt. Nulla hendrerit vehicula interdum. Nullam lobortis lorem in sollicitudin tempus. Morbi efficitur arcu eu rhoncus rutrum.
         </div>
-    </div>
-</div>
-
-
-<div class="container mt-5">
-    <div class="row">
         <div class="col">
-            <div class="fluid-iframe-container">
-                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="cover-youtube">
+                <div class="youtube-image">
+                    <img class="img-fluid" src="gala-cover.webp">
+                    <div class="youtube-play-button">
+                        <img src="./images/play.png">
+                    </div>
+                </div>
+                <div class="youtube-video" data-source="https://www.youtube.com/embed/owLILfS1ZPk">
+                    <iframe height="0" width="0" src="" allow="autoplay;" allowfullscreen></iframe>
+                </div>
+                <p class="text-end text-smaller">
+                    Video courtesy of the City of Arlington, Texas
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col">
-            <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-               <img src="gala-cover.webp" style="cursor:pointer" />
-            </div>
-            <div class="fluid-iframe-container" style="display:none">
-                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk?autoplay=1" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
+
+<script>
+    window.addEventListener("load", (event) => {
+        console.log("load uncoveryoutube");
+        let covers = document.querySelectorAll(".cover-youtube");
+        console.log(covers);
+        Array.from(covers).forEach((c) => {
+            console.log(c);
+            c.addEventListener('click', (e) => {
+                let that = e.currentTarget;
+                console.log("CLICK", that);
+                let cimage = c.querySelector(".youtube-image");
+                let cvideo = c.querySelector(".youtube-video");
+                let videoSRC = cvideo.dataset["source"];
+                let videoSRCauto = videoSRC + "?autoplay=1";
+                let cframe = cvideo.querySelector("iframe");
+                console.log(cimage, cvideo, cframe);
+                
+                cimage.style.display = 'none';
+                
+                cvideo.style.display = 'block';
+                cframe.style.display = 'block';
+                
+                cvideo.classList.add("fluid-iframe-container");
+                cframe.src = videoSRCauto;
+            });
+        });
+    });
+</script>
 
 <style>
-#bbgala .block-banner-left {
-    background-image: url("gala-16x9.webp");
-}
-#bbgala .block-banner-right {
-    background-color: #202030;
-}
+    #bbgala .block-banner-left {
+        background-image: url("gala-16x9.webp");
+    }
 
+    #bbgala .block-banner-right {
+        background-color: #202030;
+    }
 </style>
 <div id="bbgala" class="container-fluid block-banner mt-5">
     <div class="row row-cols-1 row-cols-md-2 block-banner-cover-row">
@@ -318,6 +366,17 @@ if (!doNotTrack) {
                 <div>
                     <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/646619461?h=04e0480fcb" width="640" height="360" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
