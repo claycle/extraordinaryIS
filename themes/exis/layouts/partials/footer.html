@@ -1,20 +1,55 @@
-<footer class="bg-dark">
-
-<div class="container">
-    <div class="row footer-text">
-      <div class="col-12 col-md text-center text-md-left nav-link text-white">
-          {{.Param "copyright" | markdownify}}
-      </div>
+<footer class="footer mt-5">
+    <div class="container">
+        <div class="row text-white pt-3 pb-3">
+            <div class="col col-12 text-center text-md-start pb-3">
+                <div class="fs-1 text-white d-block d-md-inline"><b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b></div>
+                <div class="ps-2 d-block d-md-inline">A Movement by the Otis and Rosie Brown Foundation</div>
+            </div>
+            <div class="col col-12 col-md-6 text-center text-md-start">
+                Otis and Rosie Brown Foundation, Inc.<br/>
+                7220 Fossil Rim Trail<br/>
+                Arlington, TX 76002<br/>
+                <a href="#" data-secret="dGVsOjgwMC04MjItMTE0MA==" data-secrettext="ODAwLTgyMi0xMTQw"></a>
+            </div>
+            <div class="col col-12 col-md-3 text-center">
+                Twitter<br/>
+                Facebook<br/>
+                Instagram
+            </div>
+            <div class="col col-12 col-md-3 text-center text-md-end">
+                    Menu Item 1<br/>
+                    Menu Item 2<br/>
+                    Menu Item 3<br/>
+                    Menu Item 4<br/>
+                    Menu Item 5<br/>
+            </div>
+        </div>
     </div>
-</div>
-  <!-- JavaScript and dependencies -->
-
-  {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
-  {{ $js := slice $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
-  <script src="{{$js.RelPermalink}}" defer></script>
-
-  {{ $jsx := resources.Get "js/shuffle.js" }}
-  {{ $js := $jsx | resources.ExecuteAsTemplate "js/shuffle.js" . | js.Build | resources.Minify }}
-  <script type="text/javascript" src="{{$js.RelPermalink }}" defer></script>
-
+    <div class="container-fluid copyright">
+        <div class="row pt-2 pb-2">
+            <div class="col text-white text-small text-center">
+                {{ .Site.Copyright | markdownify }}
+                <div class="text-small">A 501(c)(3) non-profit corporation</div>
+                <div class="text-smaller crafted"><a href="" data-secret="{{ .Site.Params.crafted_email_url | base64Encode }}">crafted by claycle</a></div>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<!-- JavaScript and dependencies -->
+{{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
+{{ $js := slice $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
+<script src="{{$js.RelPermalink}}" defer></script>
+
+{{ $jsx := resources.Get "js/shuffle.js" }}
+{{ $js := $jsx | resources.ExecuteAsTemplate "js/shuffle.js" . | js.Build | resources.Minify }}
+<script type="text/javascript" src="{{$js.RelPermalink }}" defer></script>
+
+{{ $jsx := resources.Get "js/secret.js" }}
+{{ $js := $jsx | resources.ExecuteAsTemplate "js/secret.js" . | js.Build | resources.Minify }}
+<script type="text/javascript" src="{{$js.RelPermalink }}" defer></script>
+
+{{ $jsx := resources.Get "js/navbar.js" }}
+{{ $js := $jsx | resources.ExecuteAsTemplate "js/navbar.js" . | js.Build | resources.Minify }}
+<script type="text/javascript" src="{{$js.RelPermalink }}" defer></script>
+

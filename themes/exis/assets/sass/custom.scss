@@ -148,3 +148,15 @@ div.subheader {
     border: 0;
 }
 
+$footer-bg: $exis-saltbox;
+.footer {
+  background-color: $footer-bg;
+}
+
+.copyright {
+  background-color: darken($footer-bg, 20);
+}
+
+.crafted {
+  letter-spacing: 0.5em;
+}

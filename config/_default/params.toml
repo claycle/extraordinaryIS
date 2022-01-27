@@ -1,7 +1,7 @@
 logo = "/logo.svg"
 logo_small = "/logo.svg"
 cover = "https://picsum.photos/1000/1000"
-crafted_email_url = "mailto:05_cod_chimp@icloud.com"
+crafted_email_url = "mailto:Clay <05_cod_chimp@icloud.com>?subject=Comment%20on%20ExtraordinaryIS"
 
 styletitle = "<b><span class='text-red'>Extra</span>ordinary<span class='text-red'>IS</span></b>"
 
