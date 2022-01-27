@@ -11,7 +11,7 @@ enableGitInfo = true
 enableRobotsTXT = true
 enableInlineShortcodes = true
 
-googleAnalytics = "UA-114931239-2"
+#googleAnalytics = "UA-114931239-2"
 
 [module]
 [[module.mounts]]

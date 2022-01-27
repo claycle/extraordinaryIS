@@ -28,6 +28,18 @@
     font-family: $headings-font-family;
 }
 
+.text-small {
+  font-size: 0.8em;
+}
+
+.text-smaller {
+  font-size: 0.6em;
+}
+
+.text-smallest {
+  font-size: 0.4em;
+}
+
 div.subheader {
   color: $gray-500;
   font-size: 0.5em;

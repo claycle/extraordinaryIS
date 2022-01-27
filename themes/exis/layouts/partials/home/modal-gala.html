@@ -1,0 +1,141 @@
+{{ with .Resources.GetMatch "gala.txt"  }}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            {{ .Content | markdownify }}
+        </div>
+    </div>
+</div>
+{{ end }}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <style>
+                div.modal-button-cover {
+                    background-image: url("./gala-cover.webp");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 100%;
+                    aspect-ratio: 16 / 9;-moz-border-bottom-colors:
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                button.play-button {
+                    border: 0;
+                    box-shadow: 0;
+                }
+                button.play-button:hover, button.player-button:focus, button.player-button:active{
+                    border: 0;
+                    box-shadow: 0;
+                }
+                button.play-button > img {
+                    width: 75px;
+                    height: auto;
+                    opacity: 0.5;
+                    transition: opacity 0.5s;
+                }
+                button.play-button > img:hover {
+                    opacity: 1;
+                    transition: opacity 0.5s;
+                }
+            </style>
+            <div class="modal-button-cover">
+                <button class="btn btn-link play-button" data-bs-toggle="modal" data-tagVideo="https://www.youtube.com/embed/owLILfS1ZPk" data-bs-target="#videoModal">
+                    <img src="/images/play.png">
+                </button>
+            </div>
+            <div class="modal fade" id="videoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="" allow="autoplay;" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-end text-smaller">
+            Video courtesy of the City of Arlington, Texas
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function autoPlayYouTubeModal() {
+       console.log("autoPlayYouTubeModal()");
+       let triggerOpen = document.querySelector("[data-tagVideo]"); // Just returns the first one. May need to fix this later.
+
+       //triggerOpen.click(function() {
+       triggerOpen.addEventListener('click', (e) => {
+           let that = e.currentTarget;
+           console.log("that", that, that.dataset);
+
+           let theModal = that.dataset["bsTarget"],
+               videoSRC = that.dataset["tagvideo"],
+               videoSRCauto = videoSRC + "?autoplay=1";
+           console.log(theModal, videoSRC, videoSRCauto);
+
+           let modal = document.getElementById(theModal.slice(1));
+           console.log("MODAL", modal);
+
+           let iframe = modal.querySelector("iframe");
+           console.log("IFRAME", iframe);
+
+           let clsbtn = modal.querySelector(".btn-close");
+           console.log("CLOSE", clsbtn);
+
+           clsbtn.addEventListener("click", (e) => {
+               iframe.src = videoSRC;
+           });
+           iframe.src = videoSRCauto;
+       });
+   }
+
+   window.addEventListener("load", (event) => {
+       console.log("load autoPlayYouTubeModal");
+       autoPlayYouTubeModal();
+   });
+
+</script>
+
+
+
+<style>
+#bbgala .block-banner-left {
+    background-image: url("gala-16x9.webp");
+}
+#bbgala .block-banner-right {
+    background-color: #202030;
+}
+
+</style>
+<div id="bbgala" class="container-fluid block-banner mt-5">
+    <div class="row row-cols-1 row-cols-md-2 block-banner-cover-row">
+        <div class="col g-0 block-banner-left block-banner-col text-center p-4">
+            <div class="block-banner-inner">
+                <div>
+                    Community
+                </div>
+            </div>
+        </div>
+        <div class="col g-0 block-banner-right block-banner-col text-center p-4">
+            <div class="block-banner-inner">
+                <div>
+                    <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

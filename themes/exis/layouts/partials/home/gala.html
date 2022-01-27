@@ -1,44 +1,110 @@
+<style>
+
+/*     .cover-youtube>div.cover-image {
+        background-image: url("gala-cover.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+    } */
+
+    div.youtube-image {
+        position: relative;
+    }
+    div.youtube-play-button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    div.cover-image {
+        background-color: red;
+    }
+
+    div.youtube-play-button > img {    // This is play button
+        //display: block;
+        width: 50px;
+        height: auto;
+        opacity: 0.5;
+        transition: opacity 0.5s;
+    }
+    div.youtube-play-button > img:hover {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+    }
+    div.youtube-video {
+        display: none;
+    }
+    div.youtube-video > iframe {
+        display: none;
+    }
+</style>
+
 {{ with .Resources.GetMatch "gala.txt"  }}
 <div class="container mt-5">
     <div class="row">
-        <div class="col">
+        <div class="col col-12 col-md-6">
             {{ .Content | markdownify }}
+        </div>
+        <div class="col">
+            <div class="cover-youtube">
+                <div class="youtube-image">
+                    <img class="img-fluid" src="gala-cover.webp">
+                    <div class="youtube-play-button">
+                        <img src="/images/play.png">
+                    </div>
+                </div>
+                <div class="youtube-video" data-source="https://www.youtube.com/embed/owLILfS1ZPk">
+                    <iframe height="0" width="0" src="" allow="autoplay;" allowfullscreen></iframe>
+                </div>
+                <p class="text-end text-smaller">
+                    Video courtesy of the City of Arlington, Texas
+                </p>
+            </div>
         </div>
     </div>
 </div>
 {{ end }}
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col">
-            <div class="fluid-iframe-container">
-                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col">
-            <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-               <img src="gala-cover.webp" style="cursor:pointer" />
-            </div>
-            <div class="fluid-iframe-container" style="display:none">
-                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk?autoplay=1" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+    window.addEventListener("load", (event) => {
+        console.log("load uncoveryoutube");
+        let covers = document.querySelectorAll(".cover-youtube");
+        console.log(covers);
+        Array.from(covers).forEach((c) => {
+            console.log(c);
+            c.addEventListener('click', (e) => {
+                let that = e.currentTarget;
+                console.log("CLICK", that);
+                let cimage = c.querySelector(".youtube-image");
+                let cvideo = c.querySelector(".youtube-video");
+                let videoSRC = cvideo.dataset["source"];
+                let videoSRCauto = videoSRC + "?autoplay=1";
+                let cframe = cvideo.querySelector("iframe");
+                console.log(cimage, cvideo, cframe);
+                // Hide cover
+                cimage.style.display = 'none';
+                // Show video
+                cvideo.style.display = 'block';
+                cframe.style.display = 'block';
+                // Add the fluid class to the frame's parent
+                cvideo.classList.add("fluid-iframe-container");
+                cframe.src = videoSRCauto;
+            });
+        });
+    });
+</script>
 
 <style>
-#bbgala .block-banner-left {
-    background-image: url("gala-16x9.webp");
-}
-#bbgala .block-banner-right {
-    background-color: #202030;
-}
+    #bbgala .block-banner-left {
+        background-image: url("gala-16x9.webp");
+    }
 
+    #bbgala .block-banner-right {
+        background-color: #202030;
+    }
 </style>
 <div id="bbgala" class="container-fluid block-banner mt-5">
     <div class="row row-cols-1 row-cols-md-2 block-banner-cover-row">
