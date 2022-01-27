@@ -3,11 +3,13 @@ languageCode = "en-us"
 title = "ExtraordinaryIS"
 description = "A Movement by the Otis and Rosie Brown Foundation, Inc."
 theme = "exis"
+copyright = "Copyright &copy; 2022 The Otis and Rosie Brown Foundation, Inc. All Rights Reserved."
 
 relativeURLS = true
 enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = true
+enableInlineShortcodes = true
 
 googleAnalytics = "UA-114931239-2"
 
@@ -19,4 +21,7 @@ target = "assets"
 [[module.mounts]]
 source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 target = "assets/js/bootstrap.bundle.min.js"
+
+[markup.goldmark.renderer]
+unsafe = true
 

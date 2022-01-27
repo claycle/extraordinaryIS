@@ -37,13 +37,22 @@ $exis-light-green: lighten($exis-green, $exis-darken-amount);
 $exis-light-blue: lighten($exis-blue, $exis-darken-amount);
 $exis-light-orange: lighten($exis-orange, $exis-darken-amount);
 
-// $primary:       $exis-red;
-// $secondary:     $exis-orange;
-// $success:       $exis-light-green;
-// $info:          $exis-light-blue;
-// $warning:       $exis-light-orange;
-// $danger:        $exis-light-red;
+$primary:       $exis-seagreen;
+$secondary:     $exis-saltbox;
+$success:       $exis-green;
+$info:          $exis-reef;
+$warning:       $exis-yellow;
+$danger:        $exis-red;
 // //$light:         $gray-100 !default;
 $dark: $exis-steel-gray;
 
 $black: $exis-black;
+
+$link-shade-percentage:           75%;
+$btn-hover-bg-shade-amount:       25%;
+$btn-hover-bg-tint-amount:        25%;
+$btn-hover-border-shade-amount:   30%;
+$btn-hover-border-tint-amount:    20%;
+
+
+

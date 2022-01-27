@@ -1,106 +1,106 @@
 <header>
-    {{ if not .Params.nocover }}
-        <style>
-            {{ with .Params.cover.left }}
-                #cover .block-banner-left {
-                    {{ with .image }}
-                        {{ if eq . "none" }}
+{{ if not .Params.nocover }}
+    <style>
+        {{ with .Params.cover.left }}
+            #cover .block-banner-left {
+                {{ with .image }}
+                    {{ if eq . "none" }}
                         background-image: none;
-                        {{ else }}
+                    {{ else }}
                         {{ with $.Resources.GetMatch . }}
-                        background-image: url({{ .RelPermalink }});
-                        {{ end }}
-                        {{ end }}
-                    {{ end }}
-                        {{ with .backgroundcolor }}
-                            background-color: {{ . }};
-                        {{ end }}
-                    {{ with .color }}
-                    color: {{ . }};
-                    {{ end }}
-                    {{ with .shadow }}
-                    text-shadow: {{ . }};
-                    {{ end }}
-                    {{ with .size }}
-                    font-size: {{ . }};
-                    {{ end }}
-                }
-            {{ end }}
-            {{ with  .Params.cover.right }}
-                #cover .block-banner-right {
-                    {{ with .image }}
-                        {{ if eq . "none" }}
-                        background-image: none;
-                        {{ else }}
-                            {{ with $.Resources.GetMatch . }}
-                                background-image: url({{ .RelPermalink }});
-                            {{ end }}
+                            background-image: url({{ .RelPermalink }});
                         {{ end }}
                     {{ end }}
-                    {{ with .backgroundcolor }}
+                {{ end }}
+                {{ with .backgroundcolor }}
                     background-color: {{ . }};
-                    {{ end }}
-                    {{ with .color }}
-                    color: {{ . }};
-                    {{ end }}
-                    {{ with .shadow }}
-                    text-shadow: {{ . }};
-                    {{ end }}
-                    {{ with .size }}
-                    font-size: {{ . }};
-                    {{ end }}
-                }
-            {{ end }}
-        </style>
-        <div id="cover" class="container-fluid g-0 block-banner {{ if .Params.cover.hero }}hero{{ end }}">
-            <div class="row row-cols-1 row-cols-md-2 block-banner-cover-row">
-                <div class="col g-0 block-banner-left block-banner-col text-center p-4">
-                    <div class="block-banner-inner">
-                        {{ with .Params.cover.left.glyph | string | .Resources.GetMatch }}
-                            <div class="block-banner-glyph">
-                                <img class="img-fluid" src="{{ .RelPermalink }}">
-                            </div>
+                {{ end }}
+                {{ with .color }}
+                color: {{ . }};
+                {{ end }}
+                {{ with .shadow }}
+                text-shadow: {{ . }};
+                {{ end }}
+                {{ with .size }}
+                font-size: {{ . }};
+                {{ end }}
+            }
+        {{ end }}
+        {{ with  .Params.cover.right }}
+            #cover .block-banner-right {
+                {{ with .image }}
+                    {{ if eq . "none" }}
+                        background-image: none;
+                    {{ else }}
+                        {{ with $.Resources.GetMatch . }}
+                            background-image: url({{ .RelPermalink }});
                         {{ end }}
-                        {{ with .Params.cover.left.text }}
-                            <div class="d-inline d-md-block">
-                                {{ if eq . "logo" }}
-                                    <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
-                                {{ else }}
-                                    {{ . | markdownify }}
-                                {{ end}}
-                                {{ with $.Params.cover.left.subtext }}
-                                    <div class="block-banner-subtext text-center">
-                                        {{ . }}
-                                    </div>
-                                {{ end }}
-                            </div>
+                    {{ end }}
+                {{ end }}
+                {{ with .backgroundcolor }}
+                background-color: {{ . }};
+                {{ end }}
+                {{ with .color }}
+                color: {{ . }};
+                {{ end }}
+                {{ with .shadow }}
+                text-shadow: {{ . }};
+                {{ end }}
+                {{ with .size }}
+                font-size: {{ . }};
+                {{ end }}
+            }
+        {{ end }}
+    </style>
+    <div id="cover" class="container-fluid block-banner {{ if .Params.cover.hero }}hero{{ end }}">
+        <div class="row block-banner-cover-row">
+            <div class="col col-12 col-md-6 block-banner-left block-banner-col text-center p-4">
+                <div class="block-banner-inner">
+                    {{ with .Params.cover.left.glyph | string | .Resources.GetMatch }}
+                    <div class="block-banner-glyph">
+                        <img class="img-fluid" src="{{ .RelPermalink }}">
+                    </div>
+                    {{ end }}
+                    {{ with .Params.cover.left.text }}
+                    <div class="d-inline d-md-block">
+                        {{ if eq . "logo" }}
+                        <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
+                        {{ else }}
+                        {{ . | markdownify }}
+                        {{ end}}
+                        {{ with $.Params.cover.left.subtext }}
+                        <div class="block-banner-subtext text-center">
+                            {{ . }}
+                        </div>
                         {{ end }}
                     </div>
+                    {{ end }}
                 </div>
-                <div class="col g-0 block-banner-right block-banner-col text-center p-4">
-                    <div class="block-banner-inner">
-                        {{ with .Params.cover.right.glyph | string | .Resources.GetMatch }}
-                            <div class="block-banner-glyph d-inline-block d-md-block">
-                                <img class="img-fluid" src="{{ .RelPermalink }}">
-                            </div>
-                        {{ end }}
-                        {{ with .Params.cover.right.text }}
-                            <div class="d-inline d-md-block">
-                                {{ if eq . "logo" }}
-                                    <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
-                                {{ else }}
-                                    {{ . | markdownify }}
-                                {{ end}}
-                                {{ with $.Params.cover.right.subtext }}
-                                    <div class="block-banner-subtext text-center">
-                                        {{ . }}
-                                    </div>
-                                {{ end }}
-                            </div>
+            </div>
+            <div class="col col-12 col-md-6 block-banner-right block-banner-col text-center p-4">
+                <div class="block-banner-inner">
+                    {{ with .Params.cover.right.glyph | string | .Resources.GetMatch }}
+                    <div class="block-banner-glyph d-inline-block d-md-block">
+                        <img class="img-fluid" src="{{ .RelPermalink }}">
+                    </div>
+                    {{ end }}
+                    {{ with .Params.cover.right.text }}
+                    <div class="d-inline d-md-block">
+                        {{ if eq . "logo" }}
+                        <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
+                        {{ else }}
+                        {{ . | markdownify }}
+                        {{ end}}
+                        {{ with $.Params.cover.right.subtext }}
+                        <div class="block-banner-subtext text-center">
+                            {{ . }}
+                        </div>
                         {{ end }}
                     </div>
+                    {{ end }}
                 </div>
             </div>
         </div>
-    {{ end }}
+    </div>
+{{ end }}
 </header>

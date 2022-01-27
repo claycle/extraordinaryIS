@@ -15,7 +15,7 @@ cover:
         image: none
         backgroundcolor: \#685369
         color: white
-        shadow: 2px 2px 4px black
+        xshadow: 2px 2px 4px black
         text: logo
         subtext: A Movement by the Otis and Rosie Brown Foundation
         glyph: glyph.svg
@@ -26,7 +26,7 @@ cover:
         xshadow: 2px 2px 4px black
         xtext: A Movement by the Otis and Rosie Brown Foundation
         xtext: logo
-        size: 1.25rem
+        xsize: 1.25rem
         xglyph: glyph.svg
 
 Xshufflematch: "images/test/*.{webp,jpg,png}"

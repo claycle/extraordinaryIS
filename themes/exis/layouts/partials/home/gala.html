@@ -1,0 +1,80 @@
+{{ with .Resources.GetMatch "gala.txt"  }}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            {{ .Content | markdownify }}
+        </div>
+    </div>
+</div>
+{{ end }}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="iframe-cover text-center" data-targetframe="gala">
+                <img class="img-fluid" src="gala-cover.webp">
+            </div>
+            <div class="iframe-container d-none" data-videoframe="gala">
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/owLILfS1ZPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+
+<script>
+    window.addEventListener("load", (event) => {
+        console.log("loaded");
+        let els = document.getElementsByClassName('iframe-cover');
+        Array.from(els).forEach((el) => {
+            // Do stuff here
+            console.log(el.tagName);
+            el.addEventListener("click", (e) => {
+                console.log("click", e.target.parentElement);
+                let src = e.target.parentElement;
+                let targets = document.querySelectorAll("[data-videoframe]");
+                Array.from(targets).forEach((t) => {
+                    let vf = t.dataset.videoframe;
+                    if (vf === src.dataset.targetframe) {
+                        // We have a matched
+                        console.log("match");
+                        src.classList.add("d-none");
+                        t.classList.remove("d-none");
+                        return;
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+
+<style>
+#bbgala .block-banner-left {
+    background-image: url("gala-16x9.webp");
+}
+#bbgala .block-banner-right {
+    background-color: #202030;
+}
+
+</style>
+<div id="bbgala" class="container-fluid block-banner mt-5">
+    <div class="row row-cols-1 row-cols-md-2 block-banner-cover-row">
+        <div class="col g-0 block-banner-left block-banner-col text-center p-4">
+            <div class="block-banner-inner">
+                <div>
+                    Community
+                </div>
+            </div>
+        </div>
+        <div class="col g-0 block-banner-right block-banner-col text-center p-4">
+            <div class="block-banner-inner">
+                <div>
+                    <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

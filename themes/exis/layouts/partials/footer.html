@@ -1,11 +1,12 @@
-<footer class="footer bg-dark">
+<footer class="bg-dark">
 
+<div class="container">
     <div class="row footer-text">
       <div class="col-12 col-md text-center text-md-left nav-link text-white">
           {{.Param "copyright" | markdownify}}
       </div>
     </div>
-
+</div>
   <!-- JavaScript and dependencies -->
 
   {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
