@@ -1,3 +1,8 @@
+// Variable prefixes we might need
+:root {
+   --exis-red: $exis-red;
+}
+
 // Fix some things coming out of bootstrap
 .btn-primary, .btn-secondary, .btn-success, .btn-danger, .btn-warning {
     color: $white;
@@ -21,6 +26,11 @@
 
 .text-heading {
     font-family: $headings-font-family;
+}
+
+div.subheader {
+  color: $gray-500;
+  font-size: 0.5em;
 }
 
 // Block Banners
@@ -111,13 +121,13 @@
 
 // Responsive iframe container
 // Because currently, the Bootstrap way doesn't seem to work?
-.iframe-container {
+.fluid-iframe-container {
     position: relative;
     overflow: hidden;
     padding-top: 56.25%;
 }
 
-.iframe-container iframe {
+.fluid-iframe-container iframe {
   position: absolute;
     top: 0;
     left: 0;

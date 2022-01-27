@@ -18,15 +18,28 @@
     </div>
     <div class="row mt-md-5">
         <div class="col col-12 col-md-6">
-            <h2>New Scholarships</h2>
+            <h2>New Scholarships <div class="subheader">for high school students</div></h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo sunt nulla nesciunt tenetur eveniet ipsam libero sed ea quasi nisi illum at vitae, cupiditate reprehenderit sit ut explicabo molestias maxime.</p>
-            <div>
+
+            <div class="d-md-none">
                 <button type="button" class="btn btn-primary btn-lg">Apply for Scholarship</button>
             </div>
         </div>
         <div class="col col-12 col-md-6 mt-3 mt-md-0">
-            <h2>Sustaining Grants</h2>
+            <h2>Sustaining Grants <div class="subheader">for college students</div></h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea blanditiis dolorem odit doloremque, beatae molestiae ab possimus quis debitis, asperiores harum a. Porro eum necessitatibus id reiciendis, voluptas nobis blanditiis!</p>
+
+            <div class="d-md-none">
+                <button type="button" class="btn btn-secondary btn-lg">Apply for Grant</button>
+            </div>
+        </div>
+        <!-- Display the buttons on medium here (small inline above) -->
+        <div class="col col-12 col-md-6 d-none d-md-block">
+            <div>
+                <button type="button" class="btn btn-primary btn-lg">Apply for Scholarship</button>
+            </div>
+        </div>
+        <div class="col col-12 col-md-6 mt-3 mt-md-0 d-none d-md-block">
             <div>
                 <button type="button" class="btn btn-secondary btn-lg">Apply for Grant</button>
             </div>
@@ -37,6 +50,7 @@
 <style>
     #bbscholars .block-banner-left {
         background-color: #009ca6;
+        //background-color: var(--exis-red);
     }
 
     #bbscholars .block-banner-right {

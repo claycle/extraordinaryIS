@@ -11,44 +11,25 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <div class="iframe-cover text-center" data-targetframe="gala">
-                <img class="img-fluid" src="gala-cover.webp">
-            </div>
-            <div class="iframe-container d-none" data-videoframe="gala">
-                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/owLILfS1ZPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="fluid-iframe-container">
+                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 </div>
 
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
-
-<script>
-    window.addEventListener("load", (event) => {
-        console.log("loaded");
-        let els = document.getElementsByClassName('iframe-cover');
-        Array.from(els).forEach((el) => {
-            // Do stuff here
-            console.log(el.tagName);
-            el.addEventListener("click", (e) => {
-                console.log("click", e.target.parentElement);
-                let src = e.target.parentElement;
-                let targets = document.querySelectorAll("[data-videoframe]");
-                Array.from(targets).forEach((t) => {
-                    let vf = t.dataset.videoframe;
-                    if (vf === src.dataset.targetframe) {
-                        // We have a matched
-                        console.log("match");
-                        src.classList.add("d-none");
-                        t.classList.remove("d-none");
-                        return;
-                    }
-                });
-            });
-        });
-    });
-</script>
-
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+               <img src="gala-cover.webp" style="cursor:pointer" />
+            </div>
+            <div class="fluid-iframe-container" style="display:none">
+                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk?autoplay=1" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
 #bbgala .block-banner-left {
@@ -77,4 +58,3 @@
         </div>
     </div>
 </div>
-

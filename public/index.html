@@ -201,15 +201,28 @@ if (!doNotTrack) {
     </div>
     <div class="row mt-md-5">
         <div class="col col-12 col-md-6">
-            <h2>New Scholarships</h2>
+            <h2>New Scholarships <div class="subheader">for high school students</div></h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo sunt nulla nesciunt tenetur eveniet ipsam libero sed ea quasi nisi illum at vitae, cupiditate reprehenderit sit ut explicabo molestias maxime.</p>
-            <div>
+
+            <div class="d-md-none">
                 <button type="button" class="btn btn-primary btn-lg">Apply for Scholarship</button>
             </div>
         </div>
         <div class="col col-12 col-md-6 mt-3 mt-md-0">
-            <h2>Sustaining Grants</h2>
+            <h2>Sustaining Grants <div class="subheader">for college students</div></h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea blanditiis dolorem odit doloremque, beatae molestiae ab possimus quis debitis, asperiores harum a. Porro eum necessitatibus id reiciendis, voluptas nobis blanditiis!</p>
+
+            <div class="d-md-none">
+                <button type="button" class="btn btn-secondary btn-lg">Apply for Grant</button>
+            </div>
+        </div>
+        
+        <div class="col col-12 col-md-6 d-none d-md-block">
+            <div>
+                <button type="button" class="btn btn-primary btn-lg">Apply for Scholarship</button>
+            </div>
+        </div>
+        <div class="col col-12 col-md-6 mt-3 mt-md-0 d-none d-md-block">
             <div>
                 <button type="button" class="btn btn-secondary btn-lg">Apply for Grant</button>
             </div>
@@ -220,6 +233,7 @@ if (!doNotTrack) {
 <style>
     #bbscholars .block-banner-left {
         background-color: #009ca6;
+        
     }
 
     #bbscholars .block-banner-right {
@@ -261,44 +275,25 @@ if (!doNotTrack) {
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <div class="iframe-cover text-center" data-targetframe="gala">
-                <img class="img-fluid" src="gala-cover.webp">
-            </div>
-            <div class="iframe-container d-none" data-videoframe="gala">
-                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/owLILfS1ZPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="fluid-iframe-container">
+                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 </div>
 
-
-
-<script>
-    window.addEventListener("load", (event) => {
-        console.log("loaded");
-        let els = document.getElementsByClassName('iframe-cover');
-        Array.from(els).forEach((el) => {
-            
-            console.log(el.tagName);
-            el.addEventListener("click", (e) => {
-                console.log("click", e.target.parentElement);
-                let src = e.target.parentElement;
-                let targets = document.querySelectorAll("[data-videoframe]");
-                Array.from(targets).forEach((t) => {
-                    let vf = t.dataset.videoframe;
-                    if (vf === src.dataset.targetframe) {
-                        
-                        console.log("match");
-                        src.classList.add("d-none");
-                        t.classList.remove("d-none");
-                        return;
-                    }
-                });
-            });
-        });
-    });
-</script>
-
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+               <img src="gala-cover.webp" style="cursor:pointer" />
+            </div>
+            <div class="fluid-iframe-container" style="display:none">
+                <iframe src="https://www.youtube.com/embed/owLILfS1ZPk?autoplay=1" title="2021 Gala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
 #bbgala .block-banner-left {
@@ -327,7 +322,6 @@ if (!doNotTrack) {
         </div>
     </div>
 </div>
-
 
 
 
