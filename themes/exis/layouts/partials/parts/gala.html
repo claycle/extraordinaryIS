@@ -42,11 +42,12 @@
     }
 </style>
 
-{{ with .Resources.GetMatch "gala.txt"  }}
+{{ $p := site.GetPage "parts" }}
+{{ with $p.Resources.GetMatch "gala.md"  }}
 <div class="container mt-5">
     <div class="row">
         <div class="col col-12 col-md-6">
-            {{ .Content | $.Page.RenderString }}
+            {{ .Content }}
         </div>
         <div class="col">
             <div class="cover-youtube">

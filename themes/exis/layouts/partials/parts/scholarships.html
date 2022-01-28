@@ -1,3 +1,5 @@
+{{ with .Params.scholarships }}
+{{ if .open }}
 <div class="container mt-5">
     <div class="row">
         <div class="col col-12 col-md-6">
@@ -11,8 +13,8 @@
             </div>
         </div>
         <div class="col col-12 col-md-6 mt-3 mt-md-0">
-            <h1>2022 <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b> Scholarships</h1>
-            <p>The Otis and Rosie Brown Foundation is now accepting scholarship applications for class of 2022 high school seniors in the North Texas area. Applications will be accepted until the end of April, 2022.</p>
+            <h1>{{.year  | markdownify }} <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b> Scholarships</h1>
+            <p>The Otis and Rosie Brown Foundation is now accepting scholarship applications for class of {{.year  | markdownify }} high school seniors in the North Texas area. Applications will be accepted until {{ .until | markdownify }}, {{.year  | markdownify }}.</p>
             <p>The foundation is also accepting applications for sustaining grants from previous <b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b> scholarship awardees.</p>
         </div>
     </div>
@@ -47,6 +49,10 @@
     </div>
 </div>
 
+{{ end }}
+{{ end }}
+
+
 <style>
     #bbscholars .block-banner-left {
         background-color: #009ca6;
@@ -57,6 +63,7 @@
         background-image: url("dab-16x9.webp");
     }
 </style>
+
 
 <div id="bbscholars" class="container-fluid block-banner mt-5">
     <div class="row row-cols-1 row-cols-md-2 block-banner-cover-row">

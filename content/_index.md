@@ -28,8 +28,10 @@ cover:
         xtext: logo
         xsize: 1.25rem
         xglyph: glyph.svg
-
-Xshufflematch: "images/test/*.{webp,jpg,png}"
+scholarships:
+    open: true
+    year: 2022
+    until: the end of April
 ---
 # {{< exis >}}
 
