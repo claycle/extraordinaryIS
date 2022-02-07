@@ -5,9 +5,10 @@
 {{ partial "head.html" . }}
 
 <body>
-
+{{ block "header" . }}
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
+{{ end }}
 
 <main>
     <div id="content">
@@ -18,10 +19,12 @@
     </div>
 </main>
 
-{{ partial "debug.html" . }}
 
+{{ block "footer" . }}
 {{ partial "footer.html" . }}
+{{ end }}
 
+{{ partial "debug.html" . }}
 </body>
 
 </html>
