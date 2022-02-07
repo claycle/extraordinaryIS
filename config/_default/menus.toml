@@ -1,0 +1,35 @@
+[[main]]
+name = "Google"
+url = "https://www.google.com"
+
+[[main]]
+identifier = "blog"
+title = "News"
+name = "News"
+url = "/blog/"
+weight = 100
+
+[[footer]]
+identifier = "orbf"
+name = "orbf.org"
+url = "https://orbf.org"
+weight = 1000
+
+[[social]]
+identifier = "facebook"
+name = "<i class='fab fa-facebook'></i> Facebook"
+url = "https://www.facebook.com/extraordinaryis/"
+weight = 100
+
+[[social]]
+identifier = "twitter"
+name = "<i class='fab fa-twitter'></i> Twitter"
+url = "https://twitter.com/YExtraordinary/"
+weight = 200
+
+[[social]]
+identifier = "instagram"
+name = "<i class='fab fa-instagram'></i> Instagram"
+url = "https://www.instagram.com/extraordinaryis/"
+weight = 300
+

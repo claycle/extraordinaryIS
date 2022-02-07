@@ -9,6 +9,10 @@ menu:
         name: "Home"
         weight: 100
         parent: ""
+    footer:
+        identifier: "home"
+        name: "Home"
+        weight: -100
 cover:
     hero: true
     right:

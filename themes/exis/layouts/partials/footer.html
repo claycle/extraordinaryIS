@@ -11,17 +11,24 @@
                 Arlington, TX 76002<br/>
                 <a href="#" data-secret="dGVsOjgwMC04MjItMTE0MA==" data-secrettext="ODAwLTgyMi0xMTQw"></a>
             </div>
-            <div class="col col-12 col-md-3 text-center">
-                Twitter<br/>
-                Facebook<br/>
-                Instagram
+            <div class="col col-6 col-md-3 text-left text-md-start">
+                <ul class="nav flex-column footer-social">
+                {{ $here := . }}
+                {{ range .Site.Menus.social }}
+                    <li class="nav-item">
+                        <a class="nav-link text-small pt-lg-3-0" href="{{ .URL }}">{{ .Name | safeHTML }}</a>
+                    </li>
+                {{ end }}
+                </ul>
             </div>
-            <div class="col col-12 col-md-3 text-center text-md-end">
-                    Menu Item 1<br/>
-                    Menu Item 2<br/>
-                    Menu Item 3<br/>
-                    Menu Item 4<br/>
-                    Menu Item 5<br/>
+            <div class="col col-6 col-md-3 text-end text-md-start">
+                <ul class="nav flex-column footer-links">
+                {{ range .Site.Menus.footer }}
+                    <li class="nav-item">
+                        <a class="nav-link text-small pt-0" href="{{ .URL }}">{{ .Name | safeHTML }}</a>
+                    </li>
+                {{ end }}
+                </ul>
             </div>
         </div>
     </div>

@@ -2,12 +2,11 @@
 draft: true
 title: "{{ replace .Name "-" " " | title }}"
 description: "Description of {{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
 menu:
     main:
         identifier: "{{ lower (replace .Name "-" "")  }}"
         name: "{{ replace .Name "-" " " | title }}"
-        weight: 100 
+        weight: 100
         parent: ""
 ---
 

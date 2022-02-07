@@ -7,8 +7,12 @@ menu:
     main:
         identifier: "contact"
         name: "Contact"
-        weight: 500 
+        weight: 500
         parent: ""
+    footer:
+        identifier: "contact"
+        name: "Contact"
+        weight: 500
 ---
 
 # contact
