@@ -40,6 +40,35 @@ div.subheader {
   font-size: 0.5em;
 }
 
+// Divider, from https://codepen.io/airen/details/MWWOmEM
+div.divider {
+    color: $exis-red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+    }
+
+    &::before {
+        background: linear-gradient(to right, rgba($exis-red, 0), $exis-red);
+        margin-right: 0.5rem;
+    }
+
+    &::after {
+        background: linear-gradient(to left, rgba($exis-red, 0), $exis-red);
+        margin-left: 0.5rem;
+    }
+}
+
 // Block Banners
 // Block Banners are 32x9 banners that either stack (sm) or side-by-side (md).
 // The cover banner is a special block banner.

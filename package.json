@@ -1,14 +1,26 @@
 {
   "name": "exis-hugo",
   "version": "1.0.0",
-  "description": "",
+  "description": "ExtraordinaryIS (extraordinaryis.org) 2.0",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "hugo server -D --disableFastRender",
+    "watch": "hugo -w",
+    "build": "hugo",
+    "clean": "bash ./clean.sh",
+    "test": "echo 'This is a test.'"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Clay Luther",
+    "email": "claycle@claycle.com",
+    "url": "https://claycle.com"
+  },
+  "license": "UNLICENSED",
   "dependencies": {
     "bootstrap": "^5.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claycle/extraordinaryIS.git"
   }
 }
