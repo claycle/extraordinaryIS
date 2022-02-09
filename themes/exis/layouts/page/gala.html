@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+
+{{ if $.Param "gala.preshow" }}
+    {{ with .Resources.GetMatch "pre-gala-section.{md,html}" }}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
+
+
+{{ if $.Param "gala.postshow" }}
+    {{ with .Resources.GetMatch "post-gala-section.{md,html}" }}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
+
+{{ end }}
+
+

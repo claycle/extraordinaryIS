@@ -16,3 +16,7 @@ meta_twitter_site = "@YExtraordinary"
 meta_twitter_creator = "@YExtraordinary"
 
 author = "ExtraordinaryIS"
+
+[gala]
+preshow = true
+postshow = true
