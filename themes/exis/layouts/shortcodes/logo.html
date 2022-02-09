@@ -1,0 +1,24 @@
+{{ $logo := $.Site.Params.logo }}
+{{ $style := "" }}
+{{ $class := "" }}
+{{ $suffix := "" }}
+{{ if .IsNamedParams }}
+    {{ $suffix = .Get "logo" }}
+    {{ $class = .Get "class" }}
+    {{ $style = .Get "style" }}
+{{ else }}
+    {{ $suffix = .Get 0 }}
+{{ end }}
+
+{{ if $suffix }}
+    {{ $param := (printf "logo_%s" $suffix) }}
+    {{ $findit := index $.Site.Params ($param) }}
+    {{ if $findit }}
+        {{ $logo = $findit }}
+    {{ end }}
+{{ end }}
+
+<img src="{{ $logo }}" alt="logo{{ $suffix }}"
+    {{- if $class -}} class="{{ $class }}"{{- end -}}
+    {{- if $style -}} style="{{ $style }}"{{- end -}}
+>

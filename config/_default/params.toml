@@ -1,5 +1,9 @@
-logo = "/logo.svg"
-logo_small = "/logo.svg"
+logo = "/images/logo/logo.svg"
+logo_small = "/images/logo/logo.svg"
+logo_text = "/images/logo/logo-exis.svg"
+logo_text_white = "/images/logo/logo-exis-white.svg"
+logo_text_orbf = "/images/logo/logo-exis-orbf.svg"
+logo_text_orbf_white = "/images/logo/logo-exis-orbf-white.svg"
 cover = "https://picsum.photos/1000/1000"
 crafted_email_url = "mailto:Clay <05_cod_chimp@icloud.com>?subject=Comment%20on%20ExtraordinaryIS"
 

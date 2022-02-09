@@ -39,4 +39,6 @@ scholarships:
 ---
 # {{< exis >}}
 
+{{< logo logo="text_orbf" style="width: 200px">}}
+
 About {{< exis >}}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ducimus earum accusantium asperiores vel odio voluptas ea ab, nesciunt rem dicta quasi neque ut cum, sequi soluta. Temporibus, et earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ducimus earum accusantium asperiores vel odio voluptas ea ab, nesciunt rem dicta quasi neque ut cum, sequi soluta. Temporibus, et earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ducimus earum accusantium asperiores vel odio voluptas ea ab, nesciunt rem dicta quasi neque ut cum, sequi soluta. Temporibus, et earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ducimus earum accusantium asperiores vel odio voluptas ea ab, nesciunt rem dicta quasi neque ut cum, sequi soluta. Temporibus, et earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ducimus earum accusantium asperiores vel odio voluptas ea ab, nesciunt rem dicta quasi neque ut cum, sequi soluta. Temporibus, et earum.
