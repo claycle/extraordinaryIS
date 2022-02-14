@@ -14,17 +14,16 @@ enableInlineShortcodes = true
 #googleAnalytics = "UA-114931239-2"
 
 [module]
-    [[module.mounts]]
-    source = "assets"
-    target = "assets"
+[[module.mounts]]
+source = "assets"
+target = "assets"
 
-    [[module.mounts]]
-    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-    target = "assets/js/bootstrap.bundle.min.js"
+[[module.mounts]]
+source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+target = "assets/js/bootstrap.bundle.min.js"
 
 [markup.goldmark.renderer]
 unsafe = true
-
 
 [frontmatter]
 date = ["date", "publishDate", "lastmod"]
