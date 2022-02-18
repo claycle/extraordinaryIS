@@ -7,8 +7,6 @@ logo_text_orbf_white = "/images/logo/logo-exis-orbf-white.svg"
 cover = "https://picsum.photos/1000/1000"
 crafted_email_url = "mailto:Clay <05_cod_chimp@icloud.com>?subject=Comment%20on%20ExtraordinaryIS"
 
-styletitle = "<b><span class='text-red'>Extra</span>ordinary<span class='text-red'>IS</span></b>"
-
 meta_description = "ExtraordinaryIS - A Movement by the Otis and Rosie Brown Foundation"
 meta_keywords = "extraordinaryis,foundation,otis and rosie brown,nonprofit,501(c)(3),arlington,texas,scholarships,orbf,movement"
 meta_twitter_card = "summary_large_image"
@@ -17,6 +15,17 @@ meta_twitter_creator = "@YExtraordinary"
 
 author = "ExtraordinaryIS"
 
+[address]
+street = "1234 Main Street"
+city = "Dallas"
+state = "TX"
+zipcode = "1234"
+phone = "123-456-7890"
+
 [gala]
 preshow = true
 postshow = true
+
+[snippets]
+styletitle = "<b class='text-red'>Extra</b><b>ordinary</b><b class='text-red'>IS</b>"
+styletitlelight = "<b class='text-red'>Extra</b><b class='text-light'>ordinary</b><b class='text-red'>IS</b>"

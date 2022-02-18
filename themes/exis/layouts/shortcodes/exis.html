@@ -1,1 +1,5 @@
-<b class="text-red">Extra</b><b>ordinary</b><b class="text-red">IS</b>
+{{ if not (.Get 0) }}
+{{ .Site.Params.snippets.styletitle | safeHTML }}
+{{ else }}
+{{ .Site.Params.snippets.styletitlelight | safeHTML }}
+{{ end }}
