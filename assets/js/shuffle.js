@@ -11,7 +11,7 @@ shufflematch: "images/my-custom-shuffle/*.{jpg,webp}"
 
 window.addEventListener('load', (event) => {
     const VERSION = "1.1";
-    console.log('shuffle.js ' + VERSION + ' Copyright (c) 2022 claycle.com');
+    console.info('shuffle.js ' + VERSION + ' Copyright (c) 2022 claycle.com');
     var startProductBarPos = -1;
     //console.log("Today: {{ .Date }}, Title {{ site.Title }}");
 });
